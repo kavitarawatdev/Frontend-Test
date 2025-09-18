@@ -1,10 +1,12 @@
 import './App.css'
+import { Header } from './LAYOUT/Header'
+import { HomePage } from './PAGES/HomePage'
 
-function App() {
- 
+const App = () => {
   return (
     <>
-      
+      <Header/>
+      <HomePage/>
     </>
   )
 }

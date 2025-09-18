@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@layer components{
+    .section{
+        @apply w-full bg-blue-950;
+    }
+    .section-padding{
+       @apply p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 2xl:px-12 2xl:py-20;
+    }
+    .container{
+        @apply  w-full lg:w-5xl xl:w-6xl 2xl:w-7xl bg-gray-50;
+    }
+    .container-padding{
+        @apply p-3;
+    }
+    /*  */
+    .nav-links{
+    @apply text-xl text-gray-800 hover:text-blue-500 font-medium;
+    }
+    /*  */
+    .heading-2{
+    @apply text-5xl font-bold text-gray-100;
+    }
+    .heading-3{
+    @apply text-4xl font-bold text-gray-100;
+    }
+    .heading-4{
+    @apply text-3xl font-bold text-gray-100;
+    }
+    .heading-5{
+    @apply text-2xl font-bold text-gray-100;
+    }
+    .heading-5{
+    @apply text-xl font-bold text-gray-100;
+    }
+
+    .para-lg{
+    @apply text-lg text-gray-200;
+    }
+    .para-md{
+    @apply text-base text-gray-200;
+    }
+    .para-sm{
+    @apply text-sm text-gray-200;
+    }
+
+    .icon-lg{
+    @apply text-4xl;
+    }
+    .icon-md{
+    @apply text-2xl;
+    }
+    .icon-sm{
+    @apply text-xl ;
+    }
+    /*  */
+    .flex-centered{
+    @apply flex items-center justify-center;
+    }
+}
