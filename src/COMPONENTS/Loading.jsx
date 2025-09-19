@@ -5,10 +5,10 @@ export const Loading = ({showSpinner, showSkeleton}) => {
 
     if (showSkeleton) {
         return (
-            <div className={`section common-section-padding`}>
-                <div className="container mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {Array.from({ length:5 }, (_, index) => (
+            <div className={`section p-3`}>
+                <div className="">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {Array.from({ length:6 }, (_, index) => (
                             <SkeletonCard key={index} />
                         ))}
                     </div>
@@ -18,7 +18,7 @@ export const Loading = ({showSpinner, showSkeleton}) => {
     }
 
     return (
-        <div className={`section common-section-padding flex-centered`}>
+        <div className={`section section-padding flex-centered`}>
             <div className="flex-centered flex-col space-y-4 max-w-md mx-auto text-center">
                 {showSpinner && (
                     <div className="relative">

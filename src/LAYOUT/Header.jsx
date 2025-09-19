@@ -4,17 +4,16 @@ import { CgShoppingCart } from "react-icons/cg";
 
 export const Header = () => {
     return (
-        <header className='section fixed top-0 p-1'>
-            <div className="container px-5 mx-auto grid grid-cols-[0.5fr_2fr] h-10 gap-5">
+        <header className='section fixed top-0 p-1 bg-gray-50 z-10'>
+            <div className="container px-5 mx-auto grid grid-cols-[0.5fr_2fr] h-12 gap-5 items-center">
                 {/* Logo */}
-                <div className='bg-green-700'>
+                <div className=''>
                     <figure>
-                        <img src="" alt="" />
-                        <figcaption className="text-2xl font-bold">ShopMate</figcaption>
+                        <img src="https://res.cloudinary.com/dwwurx8fo/image/upload/v1758217412/9ae34ba4-5ddd-48bc-98dd-9e8bc87e428b.png" alt="Logo" />
                     </figure>
                 </div>
 
-                <div className='bg-blue-500 grid grid-cols-[0.9fr_auto] gap-5 justify-between items-center'>
+                <div className='grid grid-cols-[0.9fr_auto] gap-5 justify-between items-center'>
 
                     <div className='w-full'>
                         {/* Navigation Links */}

@@ -1,22 +1,25 @@
 @import "tailwindcss";
+@theme {
+    --breakpoint-2xs: 20rem;  /* 320rem */
+    --breakpoint-xs: 30rem;  /* 480rem */
+}
+
 
 @layer components{
     .section{
         @apply w-full bg-blue-950;
     }
     .section-padding{
-       @apply p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 2xl:px-12 2xl:py-20;
+       @apply px-6 lg:px-10 xl:px-14 2xl:px-18 py-8 lg:py-12 xl:py-16 2xl:py-20;
     }
     .container{
-        @apply  w-full lg:w-5xl xl:w-6xl 2xl:w-7xl bg-gray-50;
+        @apply  w-full lg:w-5xl xl:w-6xl 2xl:w-7xl;
     }
     .container-padding{
-        @apply p-3;
+        @apply 2xl:px-12 2xl:py-8;
     }
     /*  */
-    .nav-links{
-    @apply text-xl text-gray-800 hover:text-blue-500 font-medium;
-    }
+    
     /*  */
     .heading-2{
     @apply text-5xl font-bold text-gray-100;
@@ -30,18 +33,18 @@
     .heading-5{
     @apply text-2xl font-bold text-gray-100;
     }
-    .heading-5{
-    @apply text-xl font-bold text-gray-100;
+    .heading-6{
+    @apply text-lg font-bold text-gray-100;
     }
 
     .para-lg{
-    @apply text-lg text-gray-200;
-    }
-    .para-md{
     @apply text-base text-gray-200;
     }
-    .para-sm{
+    .para-md{
     @apply text-sm text-gray-200;
+    }
+    .para-sm{
+    @apply text-xs text-gray-200;
     }
 
     .icon-lg{
@@ -56,5 +59,13 @@
     /*  */
     .flex-centered{
     @apply flex items-center justify-center;
+    }
+    /*  */
+    .nav-links{
+    @apply text-lg text-gray-800 hover:text-blue-500 font-medium;
+    }
+
+    .navigation{
+        @apply flex items-center justify-center cursor-pointer p-3 h-15 w-15 text-base hover:border-sky-400 hover:border-1
     }
 }

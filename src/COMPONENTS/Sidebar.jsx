@@ -1,7 +1,11 @@
 export const Sidebar = () => {
     return (
-        <section className='sidebar bg-green-600'>
-            
+        <section className='sidebar-section bg-green-600'>
+            <div>
+                {/* hot deals */}
+                <div></div>
+
+            </div>           
         </section>
     );
 };

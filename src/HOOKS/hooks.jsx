@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import ProductContext from "../CONTEXT/ProductContext"
+import FilterContext from "../CONTEXT/FilterContext"
 
-export const useProductContext=()=>{
-    return useContext(ProductContext)
+export const useFilterContext=()=>{
+    return useContext(FilterContext)
 }

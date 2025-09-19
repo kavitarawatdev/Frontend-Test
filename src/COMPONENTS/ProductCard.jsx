@@ -18,11 +18,11 @@ export const ProductCard = ({product}) => {
             <div className="text-content flex-centered flex-col bg-gray-100 p-2 gap-1">
                 <h5 className="product-name heading-5 text-gray-950 font-bold">{name}</h5>
 
-                <p>
+                <div>
                     <FormatRating rating={ratingValue} />
-                </p>
+                </div>
 
-                <p className='flex-centered gap-4'>
+                <div className='flex-centered gap-4'>
                     <span className='text-sky-400 para-lg font-bold'>{discountPrice ? formatPrice(discountPrice) : formatPrice(price)}</span>
                     {
                         discountPrice && 
@@ -31,7 +31,7 @@ export const ProductCard = ({product}) => {
                             <span className="discount-percent text-red-600 font-extrabold">{discountPercent}% OFF</span>
                         </div>
                     }
-                </p>
+                </div>
             </div>           
         </div>
     );

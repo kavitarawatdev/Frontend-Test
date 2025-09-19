@@ -1,13 +1,17 @@
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { PiList } from "react-icons/pi";
+import { useFilterContext } from "../HOOKS/hooks";
 
 export const SortSection = () => {
+
+    const {handleSorting, grid_view, total_products} = useFilterContext()
+
     return (
-        <section className='sorting-section bg-gray-300 px-5 py-2'>
+        <section className='sorting-section bg-gray-200 px-5 py-2'>
             <div className="sorting-container flex items-center justify-between">
                 {/* total items showing */}
                 <div>
-                    <p className='para-md text-gray-800'>Total {0} items</p>
+                    <p className='para-md text-gray-800'>{total_products} Items</p>
                 </div>
 
                 {/* sorting options */}
@@ -18,16 +22,17 @@ export const SortSection = () => {
                     <select
                         name="sorting"
                         id="sorting"
-                        className="btn outline-0 px-2 text-center"
+                        className="btn outline-0"
                         defaultValue={"default"}
+                        onChange={(e)=>{handleSorting(e)}}
                     >
                         <option value="default" disabled className='option'>
                             Select
                         </option>
-                        <option value="name-A-Z" className='option'>
+                        <option value="A-Z" className='option'>
                             Name: A to Z
                         </option>
-                        <option value="name-Z-A" className='option'>
+                        <option value="Z-A" className='option'>
                             Name: Z to A
                         </option>
                         <option value="price-lowest" className='option'>
@@ -61,10 +66,10 @@ export const SortSection = () => {
 
                 {/* viewing options */}
                 <div className='flex items-center gap-8'>
-                    <button className="btn" title="Grid View">
-                        <BsFillGrid3X3GapFill className='icon-md text-gray-500'/>
+                    <button className={`btn p-2 ${grid_view? "bg-gray-300":"bg-gray-200"}`} title="Grid View">
+                        <BsFillGrid3X3GapFill className={`icon-md ${grid_view?"text-sky-300":"text-gray-500"}`}/>
                     </button>
-                    <button className="btn" title="List View">
+                    <button className="btn p-2 " title="List View">
                         <PiList className='icon-md text-gray-500'/>
                     </button>
                 </div>
