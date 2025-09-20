@@ -1,8 +1,7 @@
 import { navlinks_data } from "../Data/navlinks";
-
-export const Navbar = () => {
+export const Navbar = () => { 
     return (
-        <nav className='w-full'>
+        <nav className='w-full hidden lg:block'>
             <ul className="flex items-center justify-between">
                 {
                     navlinks_data.map((item) => {

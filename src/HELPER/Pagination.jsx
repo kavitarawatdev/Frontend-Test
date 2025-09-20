@@ -17,7 +17,7 @@ export const Pagination = ({startIdx, setLimit, setStartIdx}) => {
             {newArray?.map(ele=>{
                 return (
                     <span key={ele}
-                    className={`navigation ${ele == active? "bg-sky-400 text-gray-100" : "bg-gray-100"}`}
+                    className={`navigation ${ele == active? "bg-sky-400 text-gray-100" : ""}`}
                     onClick={()=>{handleNavigation(ele)}}>
                         {ele}
                     </span>

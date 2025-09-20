@@ -7,22 +7,22 @@ export const SortSection = () => {
     const {handleSorting, grid_view, total_products} = useFilterContext()
 
     return (
-        <section className='sorting-section bg-gray-200 px-5 py-2'>
+        <section className='sorting-section bg-gray-200/80 px-5 py-2 mt-2'>
             <div className="sorting-container flex items-center justify-between">
                 {/* total items showing */}
-                <div>
-                    <p className='para-md text-gray-800'>{total_products} Items</p>
+                <div className='para-lg'>
+                    <p className='text-gray-800'>{total_products} Items</p>
                 </div>
 
                 {/* sorting options */}
-                <div className='flex items-center justify-center gap-2'>
+                <div className='flex items-center justify-center gap-2 para-lg text-gray-700'>
                     <label htmlFor="sorting" className="text-gray-800">
                         Sort By :
                     </label>
                     <select
                         name="sorting"
                         id="sorting"
-                        className="btn outline-0"
+                        className="select-optns"
                         defaultValue={"default"}
                         onChange={(e)=>{handleSorting(e)}}
                     >
@@ -48,14 +48,14 @@ export const SortSection = () => {
                 </div>
 
                 {/* showing total items */}
-                <div className='flex items-center justify-center gap-2'>
+                <div className='hidden sm:flex items-center justify-center gap-2 para-lg text-gray-700'>
                     <label htmlFor="showing" className="text-gray-800">
                         Show :
                     </label>
                     <select
                         name="showing"
                         id="showing"
-                        className="btn outline-0 px-2 text-center"
+                        className="select-optns"
                         defaultValue={"default"}
                     >
                         <option value="default" disabled className='option'>
@@ -65,7 +65,7 @@ export const SortSection = () => {
                 </div>
 
                 {/* viewing options */}
-                <div className='flex items-center gap-8'>
+                <div className='flex items-center gap-1 sm:gap-8 para-lg text-gray-700'>
                     <button className={`btn p-2 ${grid_view? "bg-gray-300":"bg-gray-200"}`} title="Grid View">
                         <BsFillGrid3X3GapFill className={`icon-md ${grid_view?"text-sky-300":"text-gray-500"}`}/>
                     </button>

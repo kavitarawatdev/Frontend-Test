@@ -4,21 +4,31 @@ export const filterReducer=(state, action)=>{
             return{
                 ...state,
                 isLoading:action.payload,
-            }
+        }
         case "SET_ERROR":
             return{
                 ...state,
                 isError:true,
-            }
-        case "SET_PRODUCTS":
+        }
+        case "SET_PRODUCTS":{
+            let maxPrice= Math.max(... action.payload.map((product) => product.discountPrice?product.discountPrice:product.price));
+            let minPrice = Math.min(...action.payload.map((product) => product.discountPrice?product.discountPrice:product.price));
+            
             return{
                 ...state,
                 limit: 6,
                 startIdx: 0,
                 all_products: action.payload,
                 filter_products: action.payload,
-                total_products: action.payload.length
+                total_products: action.payload.length,
+                filter: {
+                    ...state.filter,
+                    min_price: minPrice,
+                    max_price: maxPrice+20,
+                    price_set:maxPrice
+                },
             }
+        }
         case `SORTING_DATA`:{
             let tempFilterProducts = [...state.filter_products];
             let tempSortedData;
@@ -34,10 +44,10 @@ export const filterReducer=(state, action)=>{
                         .reverse();
                     break;
                 case "price-lowest":
-                    tempSortedData = tempFilterProducts.sort((a, b) => a.price - b.price);
+                    tempSortedData = tempFilterProducts.sort((a, b) => (a.discountPrice?a.discountPrice:a.price) - (b.discountPrice?b.discountPrice:b.price));
                     break;
                 case "price-highest":
-                    tempSortedData = tempFilterProducts.sort((a, b) => b.price - a.price);
+                    tempSortedData = tempFilterProducts.sort((a, b) => (b.discountPrice?b.discountPrice:b.price) - (a.discountPrice?a.discountPrice:a.price));
                     break;
                 case "popularity":
                     tempSortedData = tempFilterProducts.sort((a, b) => b.ratingCount - a.ratingCount);
@@ -53,37 +63,46 @@ export const filterReducer=(state, action)=>{
             };
         
         }
-        case "SET_NAVIGATION":{
-            console.log(state.startIdx, state.limit, state.total_products);
-            let start = Math.floor((state.startIdx+1)/6) < action.payload ? 
-                        state.limit+1: Math.floor((state.startIdx+1)/6) > action.payload ?
-                        state.startIdx-6:state.startIdx;
-            let end = state.total_products < start+5 ? state.total_products : start+5;
-
-            console.log(start, end);
+        case "FILTER_UPDATE":{
+            const{name, val}=action.payload
+            console.log(name, val);
             return{
                 ...state,
-                startIdx:start,
-                limit:end,
+                filter:{
+                    ...state.filter,
+                    [name]:val
+                }
+            }
+        }
+        case "UPDATE_FILTER_PRODUCTS":{
+            const {category, deals, color, brand, max_price, price_set} = state.filter;
+            let tempData=[...state.all_products];
+            // console.log(tempData);
+            
+            if(color!=""){
+                tempData = tempData.filter((curr)=>curr.colors.includes(color));
+            }
+            if(brand!=""){
+                tempData = tempData.filter((curr)=>curr.brand==brand);
+            }
+            if(deals!=""){
+                tempData=tempData.filter((currVal)=>currVal.isHot && currVal.brand==deals);
+            }
+            if(category!=""){
+                tempData=tempData.filter((currVal)=>currVal.category===category);
+            }
+            if(price_set<max_price){
+                tempData=tempData.filter((currVal)=>currVal.price<=price_set);
+            }
+            // console.log(tempData);
+            return{
+                ...state,
+                filter_products:tempData, 
+                total_products:tempData.length        
             }
         }
         
-        case "SET_FILTER_PRODUCTS":{
-            let maxPrice= Math.max(...action.payload.map((product) => product.price));
-            let minPrice = Math.min(...action.payload.map((product) => product.price));
-             return {
-                ...state,
-                all_products: [...action.payload],
-                filter_products: [...action.payload],
-                filter: {
-                    minPrice: minPrice,
-                    maxPrice: maxPrice+40,
-                    price: maxPrice,
-                },
-            };
-        }
-    
         default:
-            break;
+            return state;
     }
 }

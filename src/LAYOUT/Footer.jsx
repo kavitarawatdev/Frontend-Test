@@ -11,27 +11,28 @@ export const Footer = () => {
     ]
 
     return (
-        <section className='section section-padding footer-section bg-blue-300'>
-            <div className="container container-padding items-center grid grid-cols-3 gap-10 mx-auto">
+        <section className='section section-padding footer-section bg-blue-300 flex flex-col gap-10'>
+            <div className="container container-padding items-center flex flex-wrap justify-evenly lg:grid lg:grid-cols-3 gap-5 xl:gap-10 mx-auto">
                 {/* about */}
-                <div className='flex flex-col gap-5'>
+                <div className='flex flex-col gap-2 sm:gap-5'>
 
                     <picture>
-                        <img src="https://res.cloudinary.com/dwwurx8fo/image/upload/v1758217412/9ae34ba4-5ddd-48bc-98dd-9e8bc87e428b.png" 
+                        <img className='h-6 md:h-8 lg:h-10 xl:h-full'
+                        src="https://res.cloudinary.com/dwwurx8fo/image/upload/v1758217412/9ae34ba4-5ddd-48bc-98dd-9e8bc87e428b.png" 
                         alt="logo" 
                         loading="lazy"/>
                     </picture>
 
-                    <p className='para-sm text-gray-800 max-w-75'>
+                    <p className='para-sm text-gray-800 max-w-50 xs:max-w-60 xl:max-w-75 text-justify sm:text-left'>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.Since the 1500s, when an unknown printer.
                     </p>
                 </div>
 
                 {/* follow  */}
-                <div className='flex flex-col gap-5'>
+                <div className='flex flex-col gap-2 sm:gap-5'>
                     <h6 className="heading-6 font-semibold text-gray-900">Follow us</h6>
 
-                    <p className="para-sm text-gray-800 max-w-75">
+                    <p className="para-sm text-gray-800 max-w-50 xs:max-w-60 xl:max-w-75 text-justify sm:text-left">
                         Since the 1500s, when an unknown printer took a galley of type and scrambled.
                     </p>
 
@@ -49,10 +50,10 @@ export const Footer = () => {
                 </div>
 
                 {/* contact */}
-                <div className='flex flex-col gap-5'>
+                <div className='flex flex-col gap-2 sm:gap-5'>
                     <h6 className="heading-6 font-semibold text-gray-900">Contact Us</h6>
 
-                    <address className='para-md text-gray-800 max-w-75 whitespace-pre-line leading-relaxed not-italic'>
+                    <address className='para-md text-gray-800 max-w-60 xl:max-w-75 whitespace-pre-line leading-relaxed not-italic'>
                          E-Comm , 4578  
                          <br />
                          Marmora Road, 
@@ -63,14 +64,14 @@ export const Footer = () => {
             </div>
 
 
-            <div className="container container-padding grid grid-cols-4 gap-10 mx-auto">
+            <div className="container container-padding flex flex-wrap justify-evenly lg:grid lg:grid-cols-4 gap-5 xl:gap-10 mx-auto">
                 
                 <ul className='flex flex-col gap-0.5'>
-                    <h6 className="heading-6 font-semibold text-gray-900 mb-4">Information</h6>
+                    <h6 className="heading-6 font-semibold text-gray-900 mb-2 sm:mb-4">Information</h6>
                     {footer_list.map(list=>{
                         const {link, label}=list
                         return(
-                            <li className='para-md'>
+                            <li key={label} className='para-md'>
                                 <a href={link} className='text-gray-800'>
                                     {label}
                                 </a>
@@ -80,11 +81,11 @@ export const Footer = () => {
                 </ul>
                 
                 <ul className='flex flex-col gap-0.5'>
-                    <h6 className="heading-6 font-semibold text-gray-900 mb-4">Service</h6>
+                    <h6 className="heading-6 font-semibold text-gray-900 mb-2 sm:mb-4">Service</h6>
                     {footer_list.map(list=>{
                         const {link, label}=list
                         return(
-                            <li className='para-md'>
+                            <li key={label} className='para-md'>
                                 <a href={link} className='text-gray-800'>
                                     {label}
                                 </a>
@@ -94,11 +95,11 @@ export const Footer = () => {
                 </ul>
                 
                 <ul className='flex flex-col gap-0.5'>
-                    <h6 className="heading-6 font-semibold text-gray-900 mb-4">My Account</h6>
+                    <h6 className="heading-6 font-semibold text-gray-900 mb-2 sm:mb-4">My Account</h6>
                     {footer_list.map(list=>{
                         const {link, label}=list
                         return(
-                            <li className='para-md'>
+                            <li key={label} className='para-md'>
                                 <a href={link} className='text-gray-800'>
                                     {label}
                                 </a>
@@ -108,11 +109,11 @@ export const Footer = () => {
                 </ul>
                 
                 <ul className='flex flex-col gap-0.5'>
-                    <h6 className="heading-6 font-semibold text-gray-900 mb-4">Our Offers</h6>
+                    <h6 className="heading-6 font-semibold text-gray-900 mb-2 sm:mb-4">Our Offers</h6>
                     {footer_list.map(list=>{
                         const {link, label}=list
                         return(
-                            <li className='para-md'>
+                            <li key={label} className='para-md'>
                                 <a href={link} className='text-gray-800'>
                                     {label}
                                 </a>
@@ -124,14 +125,14 @@ export const Footer = () => {
             </div>
 
             <div className="container container-padding">
-                <hr className='text-gray-50'/>
+                <hr className='text-gray-50 mt-3'/>
                 <div className='flex items-center justify-end gap-5 py-8'>
                     {
                         payment_cards.map(card=>{
                             const {url, label}=card
                             return (
-                            <figure>
-                                <img src={url} alt={label} />
+                            <figure key={label}>
+                                <img src={url} alt={label} className='h-4 sm:h-6 lg:h-8' />
                             </figure>
                             )
                         })
