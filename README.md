@@ -9,7 +9,7 @@ This is a responsive e-commerce website built with a focus on product display an
 <br>
 2. Filtering: The product filters are working correctly. You can refine your search based on various criteria (e.g., category, price, brand).
 <br>
-3. orting: The sorting functionality is active, allowing you to reorder products by different attributes (e.g., price low-to-high, newest).
+3. Sorting: The sorting functionality is active, allowing you to reorder products by different attributes (e.g., price low-to-high, newest).
 <br>
 4. Responsiveness: The product grid, filters, and sorting are all responsive and adapt to different screen sizes.
 <br>
