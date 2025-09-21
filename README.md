@@ -1,12 +1,22 @@
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1> E-comm website </h2>
+This is a responsive e-commerce website built with a focus on product display and filtering. Please note that the site is currently under construction and isn't fully optimized for all devices, particularly mobile and tablet views.
 
-Currently, two official plugins are available:
+<h2>Features </h2>
+Product Grid Section: The core product display is functional. You can view all available products in a grid layout.
+<br>
+Filtering: The product filters are working correctly. You can refine your search based on various criteria (e.g., category, price, brand).
+<br>
+Sorting: The sorting functionality is active, allowing you to reorder products by different attributes (e.g., price low-to-high, newest).
+<br>
+Responsiveness: The product grid, filters, and sorting are all responsive and adapt to different screen sizes.
+<br>
+Known Issues 🚧
+Mobile and Tablet Optimization: The overall layout and user experience are not yet fully optimized for smaller screens. Some elements may appear out of place or not be easily accessible.
+<br>
+Under Construction: This is a work in progress. Expect to find incomplete pages, broken links, or placeholder content.
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I would appreciate it if you could take a look at the product grid section, specifically testing the filters and sorting. Your feedback on these features would be very helpful.
