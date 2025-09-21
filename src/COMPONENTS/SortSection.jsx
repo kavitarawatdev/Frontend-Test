@@ -59,7 +59,7 @@ export const SortSection = () => {
                         defaultValue={"default"}
                     >
                         <option value="default" disabled className='option'>
-                            Select
+                           6
                         </option>
                     </select>
                 </div>

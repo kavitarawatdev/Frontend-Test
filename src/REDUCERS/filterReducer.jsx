@@ -89,7 +89,7 @@ export const filterReducer=(state, action)=>{
                 tempData=tempData.filter((currVal)=>currVal.isHot && currVal.brand==deals);
             }
             if(category!=""){
-                tempData=tempData.filter((currVal)=>currVal.category===category);
+                tempData=tempData.filter((currVal)=>currVal.category==category);
             }
             if(price_set < max_price){
                 tempData=tempData.filter((currVal)=>currVal.discountPrice?
