@@ -5,18 +5,18 @@ This template provides a minimal setup to get React working in Vite with HMR and
 This is a responsive e-commerce website built with a focus on product display and filtering. Please note that the site is currently under construction and isn't fully optimized for all devices, particularly mobile and tablet views.
 
 <h2>Features </h2>
-Product Grid Section: The core product display is functional. You can view all available products in a grid layout.
+1. Product Grid Section: The core product display is functional. You can view all available products in a grid layout.
 <br>
-Filtering: The product filters are working correctly. You can refine your search based on various criteria (e.g., category, price, brand).
+2. Filtering: The product filters are working correctly. You can refine your search based on various criteria (e.g., category, price, brand).
 <br>
-Sorting: The sorting functionality is active, allowing you to reorder products by different attributes (e.g., price low-to-high, newest).
+3. orting: The sorting functionality is active, allowing you to reorder products by different attributes (e.g., price low-to-high, newest).
 <br>
-Responsiveness: The product grid, filters, and sorting are all responsive and adapt to different screen sizes.
+4. Responsiveness: The product grid, filters, and sorting are all responsive and adapt to different screen sizes.
 <br>
-Known Issues 🚧
-Mobile and Tablet Optimization: The overall layout and user experience are not yet fully optimized for smaller screens. Some elements may appear out of place or not be easily accessible.
+<h3>Known Issues</h3>
+1. Mobile and Tablet Optimization: The overall layout and user experience are not yet fully optimized for smaller screens. Some elements may appear out of place or not be easily accessible.
 <br>
-Under Construction: This is a work in progress. Expect to find incomplete pages, broken links, or placeholder content.
+2. Under Construction: This is a work in progress. Expect to find incomplete pages, broken links, or placeholder content.
 <br>
 
 I would appreciate it if you could take a look at the product grid section, specifically testing the filters and sorting. Your feedback on these features would be very helpful.
