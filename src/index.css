@@ -54,7 +54,7 @@
     @apply text-2xl md:text-3xl lg:text-4xl;
     }
     .icon-md{
-    @apply text-lg md:text-xl lg:text-2xl;
+    @apply text-base 2xs:text-lg md:text-xl lg:text-2xl;
     }
     .icon-sm{
     @apply text-base md:text-lg lg:text-xl ;
@@ -69,7 +69,7 @@
     }
 
     .navigation{
-        @apply flex items-center justify-center cursor-pointer p-2 lg:p-3 h-8 sm:h-12 lg:h-15 w-8 sm:w-12 lg:w-15 text-base hover:border-sky-400 hover:border-1
+        @apply flex items-center justify-center cursor-pointer p-2 lg:p-3 h-8 sm:h-12 lg:h-15 w-8 sm:w-12 lg:w-15 text-sm sm:text-base hover:border-sky-400 hover:border-1
     }
 
     .color-btns{
@@ -83,5 +83,10 @@
     }
     .sidebar-list{
         @apply capitalize flex items-center justify-between cursor-pointer
+    }
+    .common-btn{
+        @apply capitalize flex items-center justify-center w-fit  bg-sky-500 shadow-md text-white font-semibold rounded hover:bg-sky-600  hover:scale-105 transition-all duration-300 ease-in-out 
+        text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl 
+        px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-2.5 lg:px-7 lg:py-2.5 xl:px-8 xl:py-3 2xl:px-10 2xl:py-4
     }
 }

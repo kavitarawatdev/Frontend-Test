@@ -45,6 +45,10 @@ export const FilterProvider=({children})=>{
         dispatch({type:"SET_PRODUCTS", payload:products})     
     }
 
+    const handleClearFilters=()=>{
+        dispatch({type:"CLEAR_FILTERS"})
+    }
+
     useEffect(()=>{
         // console.log("inside useEffect first ");
         setLoading(true);    
@@ -72,7 +76,7 @@ export const FilterProvider=({children})=>{
     }, [state.filter], );
 
     return(
-        <FilterContext.Provider value={{...state, handleFilterUpdate,
+        <FilterContext.Provider value={{...state, handleFilterUpdate, handleClearFilters,
          handleSorting, setError, setLoading, setProducts}}>
             {children}
         </FilterContext.Provider>

@@ -13,7 +13,7 @@ export const filterReducer=(state, action)=>{
         case "SET_PRODUCTS":{
             let maxPrice= Math.max(... action.payload.map((product) => product.discountPrice?product.discountPrice:product.price));
             let minPrice = Math.min(...action.payload.map((product) => product.discountPrice?product.discountPrice:product.price));
-            
+            console.log("inside redcuer",action.payload.length);
             return{
                 ...state,
                 limit: 6,
@@ -91,14 +91,27 @@ export const filterReducer=(state, action)=>{
             if(category!=""){
                 tempData=tempData.filter((currVal)=>currVal.category===category);
             }
-            if(price_set<max_price){
-                tempData=tempData.filter((currVal)=>currVal.price<=price_set);
+            if(price_set < max_price){
+                tempData=tempData.filter((currVal)=>currVal.discountPrice?
+                currVal.discountPrice:currVal.price<=price_set);
             }
             // console.log(tempData);
             return{
                 ...state,
                 filter_products:tempData, 
                 total_products:tempData.length        
+            }
+        }
+        case "CLEAR_FILTERS":{
+             return{
+                ...state,
+                filter: {
+                    ...state.filter,
+                    category:"",
+                    color:"",
+                    brand:"",
+                    deals:"",
+                },
             }
         }
         

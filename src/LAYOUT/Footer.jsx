@@ -124,7 +124,7 @@ export const Footer = () => {
 
             </div>
 
-            <div className="container container-padding">
+            <div className="container container-padding mx-auto">
                 <hr className='text-gray-50 mt-3'/>
                 <div className='flex items-center justify-end gap-5 py-8'>
                     {

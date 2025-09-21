@@ -7,7 +7,7 @@ export const SortSection = () => {
     const {handleSorting, grid_view, total_products} = useFilterContext()
 
     return (
-        <section className='sorting-section bg-gray-200/80 px-5 py-2 mt-2'>
+        <section className='sorting-section bg-gray-200/80 px-1 2xs:px-3 sm:px-5 py-2 mt-2'>
             <div className="sorting-container flex items-center justify-between">
                 {/* total items showing */}
                 <div className='para-lg'>
@@ -66,10 +66,10 @@ export const SortSection = () => {
 
                 {/* viewing options */}
                 <div className='flex items-center gap-1 sm:gap-8 para-lg text-gray-700'>
-                    <button className={`btn p-2 ${grid_view? "bg-gray-300":"bg-gray-200"}`} title="Grid View">
+                    <button className={`btn p-1 2xs:p-2 ${grid_view? "bg-gray-300":"bg-gray-200"}`} title="Grid View">
                         <BsFillGrid3X3GapFill className={`icon-md ${grid_view?"text-sky-300":"text-gray-500"}`}/>
                     </button>
-                    <button className="btn p-2 " title="List View">
+                    <button className="btn p-1 2xs:p-2" title="List View">
                         <PiList className='icon-md text-gray-500'/>
                     </button>
                 </div>
