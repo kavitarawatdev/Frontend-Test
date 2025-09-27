@@ -92,7 +92,7 @@ export const filterReducer=(state, action)=>{
                 tempData=tempData.filter((currVal)=>currVal.category==category);
             }
             if(price_set < max_price){
-                tempData=tempData.filter((currVal)=>currVal.discountPrice??currVal.price<=price_set);
+                tempData=tempData.filter((currVal)=>(currVal.discountPrice??currVal.price)<=price_set);
             }
             // console.log(tempData);
             return{
