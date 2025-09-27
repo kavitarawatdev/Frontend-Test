@@ -31,7 +31,6 @@ export const GridView = () => {
         return length;
     }
     // console.log("inside GridView", isLoading, isError);
-
     if(isLoading) return <Loading />
     if (isError) return <Error/>
 
@@ -47,9 +46,9 @@ export const GridView = () => {
                     return (<ProductCard key={product.id} product={product} />)
                 })
             }
-            {
+            { let length = skeletonLength();
               total_products%6!==0?
-                Array.from({ length: skeletonLength()}, (_, index) => (
+                Array.from({ length: length}, (_, index) => (
                     <SkeletonCard key={index} />
                 )):""
             }
