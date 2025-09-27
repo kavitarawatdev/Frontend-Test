@@ -24,8 +24,9 @@ export const GridView = () => {
                 console.log(startIdx, total_products-1, limit )
                 if(startIdx < total_products-1 && limit > total_products-1){
                    length= 6-(total_products % 6)
+                }else{
+                    length=0
                 }
-                length= 0;
             }
         }else{
             length= 0;
