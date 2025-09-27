@@ -50,8 +50,8 @@ export const GridView = () => {
                     return (<ProductCard key={product.id} product={product} />)
                 })
             }
-            {   let length = skeletonLength();
-                Array.from({ length: length}, (_, index) => (
+            {  
+                Array.from({ length: skeletonLength()}, (_, index) => (
                     <SkeletonCard key={index} />
                 ))
             }
