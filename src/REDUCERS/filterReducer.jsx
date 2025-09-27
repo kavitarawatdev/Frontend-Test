@@ -11,8 +11,8 @@ export const filterReducer=(state, action)=>{
                 isError:true,
         }
         case "SET_PRODUCTS":{
-            let maxPrice= Math.max(... action.payload.map((product) => product.discountPrice?product.discountPrice:product.price));
-            let minPrice = Math.min(...action.payload.map((product) => product.discountPrice?product.discountPrice:product.price));
+            let maxPrice= Math.max(... action.payload.map((product) => product.discountPrice??product.price));
+            let minPrice = Math.min(...action.payload.map((product) => product.discountPrice??product.price));
             console.log("inside redcuer",action.payload.length);
             return{
                 ...state,
@@ -44,10 +44,10 @@ export const filterReducer=(state, action)=>{
                         .reverse();
                     break;
                 case "price-lowest":
-                    tempSortedData = tempFilterProducts.sort((a, b) => (a.discountPrice?a.discountPrice:a.price) - (b.discountPrice?b.discountPrice:b.price));
+                    tempSortedData = tempFilterProducts.sort((a, b) => (a.discountPrice??a.price) - (b.discountPrice??b.price));
                     break;
                 case "price-highest":
-                    tempSortedData = tempFilterProducts.sort((a, b) => (b.discountPrice?b.discountPrice:b.price) - (a.discountPrice?a.discountPrice:a.price));
+                    tempSortedData = tempFilterProducts.sort((a, b) => (b.discountPrice??b.price) - (a.discountPrice??a.price));
                     break;
                 case "popularity":
                     tempSortedData = tempFilterProducts.sort((a, b) => b.ratingCount - a.ratingCount);
@@ -92,8 +92,7 @@ export const filterReducer=(state, action)=>{
                 tempData=tempData.filter((currVal)=>currVal.category==category);
             }
             if(price_set < max_price){
-                tempData=tempData.filter((currVal)=>currVal.discountPrice?
-                currVal.discountPrice:currVal.price<=price_set);
+                tempData=tempData.filter((currVal)=>currVal.discountPrice??currVal.price<=price_set);
             }
             // console.log(tempData);
             return{
