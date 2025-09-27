@@ -13,7 +13,20 @@ export const GridView = () => {
     
     const [startIdx, setStartIdx] = useState(0)
     const [limit, setLimit] = useState(6)
-    
+    const skeletonLength=()=>{
+        if( total_products%6!==0){
+            if(total_products<6){
+                return 6-total_products;
+            }else if(total_products>6){
+                if(startIdx<total_products-1 && limit> total_products-1){
+                    return 6-(total_products % 6)
+                }
+                return 0;
+            }
+        }else{
+            return 0;
+        }
+    }
     // console.log("inside GridView", isLoading, isError);
 
     if(isLoading) return <Loading />
@@ -33,7 +46,7 @@ export const GridView = () => {
             }
             {
               total_products%6!==0?
-                Array.from({ length:total_products<6?6-total_products:startIdx==6*(total_products/6)+(total_products%6)?6-(total_products%6):0 }, (_, index) => (
+                Array.from({ length: skeletonLength()}, (_, index) => (
                     <SkeletonCard key={index} />
                 )):""
             }
