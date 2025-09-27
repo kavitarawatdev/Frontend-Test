@@ -15,6 +15,7 @@ export const GridView = () => {
     const [limit, setLimit] = useState(6)
     const skeletonLength=()=>{
         let length = 0
+        console.log("inside skeleton length")
         if( total_products%6!==0){
             if(total_products<6){
                length= 6-total_products;
