@@ -33,7 +33,7 @@ export const GridView = () => {
             }
             {
               total_products%6!==0?
-                Array.from({ length:total_products<6?6-total_products:startIdx==total_products+(total_products%6)?6-(total_products%6):0 }, (_, index) => (
+                Array.from({ length:total_products<6?6-total_products:startIdx==6*(total_products/6)+(total_products%6)?6-(total_products%6):0 }, (_, index) => (
                     <SkeletonCard key={index} />
                 )):""
             }
